@@ -1,6 +1,6 @@
 # Project Overview 🎉
 
-Hey there! Welcome to **Project Zaliczeniowy**, a reasoning system that uses **Progressive** and **Regressive** methods to work with knowledge bases and facts. 🚀
+Regressive and Progressive App, a reasoning system that uses **Progressive** and **Regressive** methods to work with knowledge bases and facts. 🚀
 
 It's a pretty cool tool if you're into **Artificial Intelligence**, **Rule-based Systems**, or just experimenting with how logic can help us infer new information! 🤖💡
 
