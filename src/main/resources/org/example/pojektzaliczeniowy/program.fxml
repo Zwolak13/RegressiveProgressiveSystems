@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="wholeScene" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.pojektzaliczeniowy.ProgramController">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="5.0" minWidth="5.0" percentWidth="2.0" prefWidth="5.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="345.0" minWidth="10.0" percentWidth="26.0" prefWidth="133.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="574.0" minWidth="10.0" prefWidth="565.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="574.0" minWidth="10.0" prefWidth="565.0" />
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="574.0" minWidth="10.0" prefWidth="565.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="5.0" minWidth="5.0" percentWidth="2.0" prefWidth="5.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints fillHeight="false" maxHeight="89.0" minHeight="-Infinity" percentHeight="5.0" prefHeight="29.0" valignment="TOP" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="89.0" minHeight="10.0" percentHeight="2.0" prefHeight="20.0" valignment="TOP" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="379.0" minHeight="10.0" percentHeight="8.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="379.0" minHeight="10.0" percentHeight="2.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="415.0" minHeight="10.0" percentHeight="8.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="20.0" minHeight="10.0" percentHeight="2.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="432.0" minHeight="10.0" percentHeight="8.0" prefHeight="346.0" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="432.0" minHeight="10.0" percentHeight="5.0" prefHeight="346.0" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="432.0" minHeight="10.0" prefHeight="346.0" vgrow="SOMETIMES" />
+        <RowConstraints fillHeight="false" maxHeight="421.0" minHeight="10.0" percentHeight="2.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <MenuBar GridPane.columnIndex="2" GridPane.columnSpan="6">
+            <menus>
+                <Menu mnemonicParsing="false" text="O Autorach">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#infoClicked" text="Informacje" />
+                        <MenuItem mnemonicParsing="false" onAction="#specClicked" text="Specyfikacje" />
+                    </items></Menu>
+            </menus>
+        </MenuBar>
+        <TextField fx:id="baseArea" editable="false" prefHeight="35.0" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+        <TextField fx:id="factArea" editable="false" prefHeight="35.0" visible="false" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+        <Button fx:id="generateAnswer" mnemonicParsing="false" onMouseClicked="#onMouseClickedGenFacts" prefHeight="35.0" prefWidth="150.0" text="Generuj Fakty" visible="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+        <Button fx:id="checkTarget" mnemonicParsing="false" onMouseClicked="#onMouseClickedTargets" prefHeight="35.0" prefWidth="150.0" text="Sprawdź Cel" visible="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+        <TextArea fx:id="answerArea" editable="false" prefHeight="300.0" text="&#10;&#10;&#10;" GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+        </TextArea>
+        <GridPane GridPane.columnIndex="3" GridPane.rowIndex="6">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="125.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="83.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <RadioButton fx:id="progRadio" mnemonicParsing="false" onAction="#radioChecked" prefHeight="20.0" prefWidth="150.0" text="Progresywny" visible="false">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="Type" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="regRadio" mnemonicParsing="false" onAction="#radioChecked" prefHeight="20.0" prefWidth="150.0" text="Regresywny" toggleGroup="$Type" visible="false" GridPane.rowIndex="1">
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </RadioButton>
+                <CheckBox fx:id="targetCheckBox" mnemonicParsing="false" onAction="#checkBoxChecked" text="Cel" visible="false" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+      <ComboBox fx:id="listOfTargets" prefHeight="35.0" prefWidth="150.0" promptText="Cel" visible="false" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <children>
+              <Button fx:id="loadBase" mnemonicParsing="false" onMouseClicked="#onMouseClickedBase" prefHeight="35.0" prefWidth="150.0" text="Wczytaj Reguły" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="58.0">
+               <children>
+                  <Button fx:id="clearBase" mnemonicParsing="false" onMouseClicked="#onMouseClickedClearBase" prefHeight="35.0" prefWidth="30.0" text="X" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <children>
+              <Button fx:id="loadFacts" mnemonicParsing="false" onMouseClicked="#onMouceClickedLoadFacts" prefHeight="35.0" prefWidth="150.0" text="Wczytaj Fakty" visible="false" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="58.0">
+               <children>
+                  <Button fx:id="clearFacts" mnemonicParsing="false" onMouseClicked="#onMouseClickedClearFacts" prefHeight="35.0" prefWidth="30.0" text="X" visible="false" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+      <VBox prefHeight="354.0" prefWidth="208.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="79.0" prefWidth="208.0">
+               <children>
+                  <Button fx:id="defaultButton" mnemonicParsing="false" onMouseClicked="#onMouseClickedLoadDefault" prefHeight="35.0" prefWidth="150.0" text="Załaduj Domyślne" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="220.0" prefWidth="208.0">
+               <children>
+                  <Button fx:id="clearTextFieldButton" mnemonicParsing="false" onMouseClicked="#onMouseClickedClear" prefHeight="55.0" prefWidth="150.0" text="Wyczyść" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+    </children>
+</GridPane>

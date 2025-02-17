@@ -1,0 +1,8 @@
+p<-a,b,c
+a<-d
+q<-a,c
+n<-b,c
+o<-x,y
+h<-p,a
+p<-d,n
+x
